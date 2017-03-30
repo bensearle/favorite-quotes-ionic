@@ -10,6 +10,7 @@ import { SettingsPage } from '../pages/settings/settings';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { SettingsService } from '../services/settings';
 import { QuotesService } from '../services/quotes';
 
 @NgModule({
@@ -38,8 +39,9 @@ import { QuotesService } from '../services/quotes';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    QuotesService
+    SettingsService,
+    QuotesService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
 export class AppModule {}
